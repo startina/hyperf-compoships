@@ -2,11 +2,15 @@
 
 namespace Awobaz\Compoships\Database\Eloquent\Relations;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo as BaseBelongsTo;
+use Hyperf\Database\Model\Builder;
+use Hyperf\Database\Model\Collection;
+use Hyperf\Database\Model\Model;
+use Hyperf\Database\Model\Relations\BelongsTo as BaseBelongsTo;
 
+/**
+ * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
+ * @extends BaseBelongsTo<TRelatedModel>
+ */
 class BelongsTo extends BaseBelongsTo
 {
     /**
@@ -27,10 +31,6 @@ class BelongsTo extends BaseBelongsTo
 
     /**
      * Associate the model instance to the given parent.
-     *
-     * @param \Illuminate\Database\Eloquent\Model|int|string|null $model
-     *
-     * @return \Illuminate\Database\Eloquent\Model
      */
     public function associate($model)
     {
@@ -120,10 +120,6 @@ class BelongsTo extends BaseBelongsTo
 
     /**
      * Gather the keys from an array of related models.
-     *
-     * @param array $models
-     *
-     * @return array
      */
     protected function getEagerModelKeys(array $models)
     {
@@ -137,10 +133,6 @@ class BelongsTo extends BaseBelongsTo
     /**
      * Gather the keys from an array of related models that
      * are using a composite related key.
-     *
-     * @param array $models
-     *
-     * @return array
      */
     protected function getEagerModelKeysForArray(array $models)
     {
@@ -162,8 +154,6 @@ class BelongsTo extends BaseBelongsTo
 
     /**
      * Get the fully qualified foreign key of the relationship.
-     *
-     * @return string
      */
     public function getQualifiedForeignKey()
     {
@@ -178,12 +168,6 @@ class BelongsTo extends BaseBelongsTo
 
     /**
      * Add the constraints for a relationship query.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param \Illuminate\Database\Eloquent\Builder $parentQuery
-     * @param array|mixed                           $columns
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function getRelationExistenceQuery(Builder $query, Builder $parentQuery, $columns = ['*'])
     {
@@ -207,12 +191,6 @@ class BelongsTo extends BaseBelongsTo
 
     /**
      * Match the eagerly loaded results to their parents.
-     *
-     * @param array                                    $models
-     * @param \Illuminate\Database\Eloquent\Collection $results
-     * @param string                                   $relation
-     *
-     * @return array
      */
     public function match(array $models, Collection $results, $relation)
     {

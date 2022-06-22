@@ -2,7 +2,7 @@
 
 namespace Awobaz\Compoships\Database\Query;
 
-use Illuminate\Database\Query\Builder as BaseQueryBuilder;
+use Hyperf\Database\Query\Builder as BaseQueryBuilder;
 
 class Builder extends BaseQueryBuilder
 {

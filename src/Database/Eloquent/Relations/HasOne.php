@@ -2,10 +2,14 @@
 
 namespace Awobaz\Compoships\Database\Eloquent\Relations;
 
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne as BaseHasOne;
+use Hyperf\Database\Model\Collection;
+use Hyperf\Database\Model\Model;
+use Hyperf\Database\Model\Relations\HasOne as BaseHasOne;
 
+/**
+ * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
+ * @extends BaseHasOne<TRelatedModel>
+ */
 class HasOne extends BaseHasOne
 {
     use HasOneOrMany;
@@ -28,10 +32,6 @@ class HasOne extends BaseHasOne
 
     /**
      * Get the default value for this relation.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $model
-     *
-     * @return \Illuminate\Database\Eloquent\Model|null
      */
     protected function getDefaultFor(Model $model)
     {
@@ -81,11 +81,6 @@ class HasOne extends BaseHasOne
 
     /**
      * Match the eagerly loaded results to their parents.
-     *
-     * @param array                                    $models
-     * @param \Illuminate\Database\Eloquent\Collection $results
-     * @param string                                   $relation
-     *
      * @return array
      */
     public function match(array $models, Collection $results, $relation)
@@ -95,10 +90,6 @@ class HasOne extends BaseHasOne
 
     /**
      * Make a new related instance for the given model.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $parent
-     *
-     * @return \Illuminate\Database\Eloquent\Model
      */
     public function newRelatedInstanceFor(Model $parent)
     {

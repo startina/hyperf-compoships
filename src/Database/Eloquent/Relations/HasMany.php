@@ -2,9 +2,13 @@
 
 namespace Awobaz\Compoships\Database\Eloquent\Relations;
 
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Relations\HasMany as BaseHasMany;
+use Hyperf\Database\Model\Collection;
+use Hyperf\Database\Model\Relations\HasMany as BaseHasMany;
 
+/**
+ * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
+ * @extends BaseHasMany<TRelatedModel>
+ */
 class HasMany extends BaseHasMany
 {
     use HasOneOrMany;
@@ -42,10 +46,6 @@ class HasMany extends BaseHasMany
 
     /**
      * Match the eagerly loaded results to their parents.
-     *
-     * @param array                                    $models
-     * @param \Illuminate\Database\Eloquent\Collection $results
-     * @param string                                   $relation
      *
      * @return array
      */

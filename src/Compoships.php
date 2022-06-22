@@ -4,7 +4,7 @@ namespace Awobaz\Compoships;
 
 use Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships;
 use Awobaz\Compoships\Database\Query\Builder as QueryBuilder;
-use Illuminate\Support\Str;
+use Hyperf\Utils\Str;
 
 trait Compoships
 {
