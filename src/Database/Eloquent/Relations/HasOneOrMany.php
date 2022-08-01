@@ -2,7 +2,8 @@
 
 namespace Awobaz\Compoships\Database\Eloquent\Relations;
 
-use Hyperf\Database\Query\Builder;
+use Hyperf\Database\Model\Relations\Constraint;
+use Hyperf\Database\Model\Builder;
 use Hyperf\Database\Model\Collection;
 use Hyperf\Database\Model\Model;
 use Hyperf\Database\Query\JoinClause;
@@ -16,7 +17,7 @@ trait HasOneOrMany
      */
     public function addConstraints()
     {
-        if (static::$constraints) {
+        if (Constraint::isConstraint()) {
             $foreignKey = $this->getForeignKeyName();
             $parentKeyValue = $this->getParentKey();
 

@@ -6,6 +6,7 @@ use Hyperf\Database\Model\Builder;
 use Hyperf\Database\Model\Collection;
 use Hyperf\Database\Model\Model;
 use Hyperf\Database\Model\Relations\BelongsTo as BaseBelongsTo;
+use Hyperf\Database\Model\Relations\Constraint;
 
 /**
  * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
@@ -63,7 +64,7 @@ class BelongsTo extends BaseBelongsTo
      */
     public function addConstraints()
     {
-        if (static::$constraints) {
+        if (Constraint::isConstraint()) {
             // For belongs to relationships, which are essentially the inverse of has one
             // or has many relationships, we need to actually query on the primary key
             // of the related models matching on the foreign key that's on a parent.
