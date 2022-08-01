@@ -7,11 +7,10 @@ use Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo;
 use Awobaz\Compoships\Database\Eloquent\Relations\HasMany;
 use Awobaz\Compoships\Database\Eloquent\Relations\HasOne;
 use Awobaz\Compoships\Exceptions\InvalidUsageException;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Query\Expression;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use Hyperf\Database\Model\Builder;
+use Hyperf\Database\Model\Model;
+use Hyperf\Database\Query\Expression;
+use Hyperf\Utils\Str;
 
 trait HasRelationships
 {
