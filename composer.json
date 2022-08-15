@@ -14,7 +14,7 @@
     }
   ],
   "require": {
-    "hyperf/database": "~2.2.0"
+    "hyperf/database": "^3.0"
   },
   "require-dev": {
     "ext-sqlite3": "*"
