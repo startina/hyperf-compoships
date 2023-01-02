@@ -1,12 +1,12 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Eloquent\Concerns;
+namespace Startina\Database\Eloquent\Concerns;
 
-use Awobaz\Compoships\Compoships;
-use Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo;
-use Awobaz\Compoships\Database\Eloquent\Relations\HasMany;
-use Awobaz\Compoships\Database\Eloquent\Relations\HasOne;
-use Awobaz\Compoships\Exceptions\InvalidUsageException;
+use Startina\Compoships;
+use Startina\Database\Eloquent\Relations\BelongsTo;
+use Startina\Database\Eloquent\Relations\HasMany;
+use Startina\Database\Eloquent\Relations\HasOne;
+use Startina\Exceptions\InvalidUsageException;
 use Hyperf\Database\Model\Builder;
 use Hyperf\Database\Model\Model;
 use Hyperf\Database\Query\Expression;
@@ -43,7 +43,7 @@ trait HasRelationships
      * @param string|array|null $foreignKey
      * @param string|array|null $localKey
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @return \Startina\Database\Eloquent\Relations\HasOne
      */
     public function hasOne($related, $foreignKey = null, $localKey = null)
     {
@@ -78,7 +78,7 @@ trait HasRelationships
      * @param string|array                          $foreignKey
      * @param string|array                          $localKey
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasOne
+     * @return \Startina\Database\Eloquent\Relations\HasOne
      */
     protected function newHasOne(Builder $query, Model $parent, $foreignKey, $localKey)
     {
@@ -107,7 +107,7 @@ trait HasRelationships
      * @param string|array|null $foreignKey
      * @param string|array|null $localKey
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasMany
+     * @return \Startina\Database\Eloquent\Relations\HasMany
      */
     public function hasMany($related, $foreignKey = null, $localKey = null)
     {
@@ -142,7 +142,7 @@ trait HasRelationships
      * @param string|array                          $foreignKey
      * @param string|array                          $localKey
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\HasMany
+     * @return \Startina\Database\Eloquent\Relations\HasMany
      */
     protected function newHasMany(Builder $query, Model $parent, $foreignKey, $localKey)
     {
@@ -157,7 +157,7 @@ trait HasRelationships
      * @param string|array|null $ownerKey
      * @param string            $relation
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
+     * @return \Startina\Database\Eloquent\Relations\BelongsTo
      */
     public function belongsTo($related, $foreignKey = null, $ownerKey = null, $relation = null)
     {
@@ -198,7 +198,7 @@ trait HasRelationships
      * @param string|array                          $ownerKey
      * @param string                                $relation
      *
-     * @return \Awobaz\Compoships\Database\Eloquent\Relations\BelongsTo
+     * @return \Startina\Database\Eloquent\Relations\BelongsTo
      */
     protected function newBelongsTo(Builder $query, Model $child, $foreignKey, $ownerKey, $relation)
     {

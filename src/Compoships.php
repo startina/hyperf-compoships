@@ -1,9 +1,9 @@
 <?php
 
-namespace Awobaz\Compoships;
+namespace Startina;
 
-use Awobaz\Compoships\Database\Eloquent\Concerns\HasRelationships;
-use Awobaz\Compoships\Database\Query\Builder as QueryBuilder;
+use Startina\Database\Eloquent\Concerns\HasRelationships;
+use Startina\Database\Query\Builder as QueryBuilder;
 use Hyperf\Utils\Str;
 
 trait Compoships
@@ -39,7 +39,7 @@ trait Compoships
     /**
      * Configure Eloquent to use Compoships Query Builder.
      *
-     * @return \Awobaz\Compoships\Database\Query\Builder|static
+     * @return \Startina\Database\Query\Builder|static
      */
     protected function newBaseQueryBuilder()
     {

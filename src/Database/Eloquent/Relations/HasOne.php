@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Eloquent\Relations;
+namespace Startina\Database\Eloquent\Relations;
 
 use Hyperf\Database\Model\Collection;
 use Hyperf\Database\Model\Model;

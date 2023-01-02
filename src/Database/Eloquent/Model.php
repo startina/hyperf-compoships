@@ -1,8 +1,8 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Eloquent;
+namespace Startina\Database\Eloquent;
 
-use Awobaz\Compoships\Compoships;
+use Startina\Compoships;
 use Hyperf\Database\Model\Model as Eloquent;
 
 class Model extends Eloquent

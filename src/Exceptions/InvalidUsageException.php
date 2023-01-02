@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Exceptions;
+namespace Startina\Exceptions;
 
 use Exception;
 

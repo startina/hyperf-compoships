@@ -1,6 +1,6 @@
 <?php
 
-namespace Awobaz\Compoships\Database\Query;
+namespace Startina\Database\Query;
 
 use Hyperf\Database\Query\Builder as BaseQueryBuilder;
 

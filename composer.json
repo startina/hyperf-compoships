@@ -1,5 +1,5 @@
 {
-  "name": "coding-linheng/compoships",
+  "name": "startina/compoships",
   "description": "hyperf relationships with support for composite/multiple keys",
   "license": "MIT",
   "keywords": [
@@ -14,14 +14,14 @@
     }
   ],
   "require": {
-    "hyperf/database": "^3.0"
+    "hyperf/database": "~2.2.0"
   },
   "require-dev": {
     "ext-sqlite3": "*"
   },
   "autoload": {
     "psr-4": {
-      "Awobaz\\Compoships\\": "src"
+      "Startina\\": "src"
     }
   },
   "autoload-dev": {
